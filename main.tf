@@ -1,14 +1,19 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+    archive = {
+      source = "hashicorp/archive"
+    }
+  }
+}
+
 provider "aws" {
-  version = "~> 2.0"
-  region  = var.region
-}
-
-provider "random" {
-  version = "~> 2.0"
-}
-
-provider "archive" {
-  version = "~> 1.0"
+  region = var.region
 }
 
 variable "region" {
